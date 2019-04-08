@@ -18,7 +18,7 @@ public class PriorityQueueTester1 {
 	
 	public static void main(String[] args) {
 
-		//DisplayablePriorityQueue<Integer, String> pq = new UnsortedListPriorityQueue<>(new IntegerComparator1());  //1
+//		DisplayablePriorityQueue<Integer, String> pq = new UnsortedListPriorityQueue<>(new IntegerComparator1());  //1
 		DisplayablePriorityQueue<Integer, String> pq = new SortedListPriorityQueue<>(new IntegerComparator1());  //2
 		//DisplayablePriorityQueue<Integer, String> pq = new HeapListPriorityQueue<>(new IntegerComparator1());    //3
 		//DisplayablePriorityQueue<Integer, String> pq = new HeapPriorityQueue<>(new IntegerComparator1());        //4
@@ -63,8 +63,11 @@ public class PriorityQueueTester1 {
 	}
 	
 	private static <K, V> void removeMin(DisplayablePriorityQueue<K, V> pq) { 
-		System.out.println("\nPQ content after removing highest priority element " + pq.removeMin()); 
-		pq.display(); 
+		if(pq.size()>0) {
+			System.out.println("\nPQ content after removing highest priority element " + pq.removeMin()); 
+			pq.display(); 
+		}
+		else System.out.println("\nPQ content after removing highest priority element null\nEMPTY"); 
 	}
 
 	
